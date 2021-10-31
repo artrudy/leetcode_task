@@ -1,0 +1,4 @@
+function median(array) {
+  return array.sort()
+  }
+console.log(median([33,99,100,30,29,50]))
