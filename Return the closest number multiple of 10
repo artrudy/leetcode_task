@@ -1,0 +1,5 @@
+  const closestMultiple10 = num => {
+  let theRest = num % 10;
+  let result = theRest < 5 ? num - theRest: num + 10 - theRest;
+  return result;
+};
