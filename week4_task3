@@ -1,0 +1,7 @@
+function task3 (arr) {
+
+let result = arr.map(it =>  it['id'])
+   return result
+ }
+ console.log( task3([{id: 1},{id: 2},{id: 3},{id: 4}]))
+  
