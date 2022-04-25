@@ -1,0 +1,6 @@
+function task1 (arr1, arr2) {
+let result = arr1.map((it, index) =>  it + arr2[index])
+   return result
+ }
+ console.log( task1( [1,7], [9,3]))
+  
