@@ -1,0 +1,7 @@
+function task11 (arr) {
+
+  const result = arr.reduce((acc, rec, index) => ({...acc, [`field${index + 1}`]: rec}), {})
+  return result
+
+}
+console.log(task11([true,1,'wow','you are smart, bro']))
