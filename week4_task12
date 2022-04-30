@@ -1,0 +1,14 @@
+function task12 (obj) {
+  
+
+  const result = Object.keys(obj).reduce((acc, rec) => {
+    if (typeof obj[rec]  === 'string') {
+      return ({...acc, [rec]: obj[rec]})
+    }
+    return acc
+  }, {})
+
+  return result
+  
+}
+console.log(task12({ name: 'pilot', isActive: true }))
