@@ -1,0 +1,14 @@
+function task13(obj) {
+ 
+let result = Object.keys(obj).reduce((acc, rec) => {
+  if (obj[rec] === false) {
+    return [...acc, rec]
+  }
+return acc
+}, [])
+
+
+return result
+
+}
+console.log(task13( { isActive: false, isPilot: true , lhjlhlkh: false  }))
