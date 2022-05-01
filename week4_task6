@@ -1,0 +1,11 @@
+function foo(arr) {
+return arr.reduce((acc, rec) => {
+  if ((rec * 2) % 10 === 0) {
+    return [...acc, rec * 2]
+  }
+  return acc
+
+}, []
+)
+}
+console.log(foo([1,2,3,7,10,5]))
