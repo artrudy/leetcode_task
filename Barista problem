@@ -1,0 +1,17 @@
+function barista(coffees){
+const sorted_cofees = coffees.sort(function(a, b){return a - b});
+let result = 0;
+let final_result = 0;
+for (let i = 0; i < coffees.length; i++) {
+  if (i === 0 ) {
+    result = result + sorted_cofees[i]
+  }
+  if (i > 0 && i < coffees.length) {
+  result = result + sorted_cofees[i] + 2;}
+  if (i === coffees.length) {
+    result = result + sorted_cofees[i]
+  }
+  final_result = final_result + result
+}
+return final_result
+}
