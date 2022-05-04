@@ -1,0 +1,12 @@
+function vowelIndices(word){
+    let split_word = word.split('')
+    const dictionary = ['a', 'e', 'i', 'o', 'u', 'y', 'A', 'E', 'I', 'O', 'U', 'Y']
+    let result = split_word.reduce((acc, rec, index) => {
+        if (dictionary.indexOf(rec) >= 0) {
+            return [...acc, index + 1]
+        }
+        return acc
+    }, [])
+    return result
+  }
+  console.log(vowelIndices('Mmmm'))
