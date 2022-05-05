@@ -1,0 +1,18 @@
+ var countOdds = function(low, high) {
+    if ((high-low + 1) % 2 === 0) {
+        let result = (high - low + 1) / 2
+        return result
+    }
+    if ((high-low + 1) % 2 !== 0) {
+        if (low % 2 !== 0 && high % 2 !== 0) {
+            let result = Math.ceil((high - low + 1) / 2)
+            return result
+            }
+            else {
+                let result = Math.floor((high - low + 1) / 2)
+                return result
+                }
+            }
+        return result
+    
+    }
