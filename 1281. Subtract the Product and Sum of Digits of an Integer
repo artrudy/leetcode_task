@@ -1,0 +1,8 @@
+var subtractProductAndSum = function(n) {
+  let arr = n.toString().split('').map(it =>  parseInt(it))
+  let sum = arr.reduce((acc, rec) => acc + rec)
+  let mult = arr.reduce((acc, rec) => acc * rec)
+  return mult - sum 
+    
+};
+console.log(subtractProductAndSum(234))
