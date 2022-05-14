@@ -1,0 +1,9 @@
+var pivotArray = function(nums, pivot) {
+    let less_arr = nums.filter(it => it < pivot)
+    let more_arr = nums.filter(it => it > pivot)
+    let pivot_arr = nums.filter(it => it  === pivot)
+    let result = [...less_arr, ...pivot_arr,...more_arr ]
+    return result
+    
+};
+console.log(pivotArray([9,12,5,10,14,3,10], 10))
