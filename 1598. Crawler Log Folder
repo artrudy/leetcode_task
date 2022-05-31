@@ -1,0 +1,13 @@
+
+var minOperations = function(logs) {
+  let st =[]
+  for (const op of logs) {
+    if(op === '../'){
+      st.pop()
+    } else if (op !== './') {
+      st.push(op)
+    }
+  }
+   return st.length
+};
+console.log(minOperations(["d1/","d2/","../","d21/","./"]))
