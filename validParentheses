@@ -1,0 +1,23 @@
+function validParentheses(parens) {
+    const dict = {
+     ')': '(',
+    }
+
+   let st = [];
+
+   for (let i = 0; i < parens.length; i ++) {
+     if (parens[i] === '(') {
+       st.push(parens[i])
+    } else {
+      let actual = st.pop()
+      let expected = dict[parens[i]]
+
+      if(actual !== expected){
+        return false        
+      } 
+    }
+   }
+   return st.length === 0
+    
+};
+console.log(validParentheses("(())((()())())"))
