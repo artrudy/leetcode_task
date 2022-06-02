@@ -1,0 +1,35 @@
+
+ var evalRPN = function(tokens) {
+   let st = []
+  for (const token of tokens){
+    if (['*', '/', '-', '+'].includes(token)) {
+      const y = st.pop()
+      const x = st.pop()
+
+      st.push(EvalExpression(x,y, token)) 
+    } else {
+      st.push(Number(token))
+    }
+  }
+return st.pop()
+
+  function EvalExpression(x, y, operand){
+    if(operand === '+'){
+      return x + y
+    }
+    if(operand === '-'){
+      return x - y
+    }
+    if (operand === '/'){
+      return Math.trunc(x / y)
+    }
+    if (operand === '*'){
+      return x * y
+    }
+  }
+  
+
+
+    
+};
+console.log(evalRPN(["2","1","+","3","*"]))
