@@ -1,0 +1,33 @@
+/**
+ * @param {number[]} digits
+ * @return {number[]}
+ */
+ var plusOne = function(digits) {
+  
+   if(digits[digits.length -1] !== 9){
+     let d = digits[digits.length - 1];
+     digits.pop();
+     digits.push(d + 1);
+     return digits
+    } else {
+
+let st = [];
+let i = digits.length -1;
+let z = 0;
+    while(digits[i] === 9) {
+      st.push(0);
+      digits.pop();
+      i--;
+}
+  let n = digits[digits.length - 1] ;
+  console.log(digits)
+  digits.pop();
+  console.log(digits)
+  digits.push(n + 1 || 1);
+  console.log(digits)
+  return [...digits, ...st]
+
+}
+  
+};
+console.log(plusOne([1,2,3,4,5,6,9,9]))
