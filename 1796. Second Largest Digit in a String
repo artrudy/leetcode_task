@@ -1,0 +1,17 @@
+
+ var secondHighest = function(s) {
+  number_arr = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+
+  let arr = []
+  for(const element of s){
+    if(number_arr.includes(element)){
+      arr.push(element)
+    }
+  }
+  let sorted_arr = [... new Set(arr)].sort((a,b) => a-b)
+  let result = sorted_arr[sorted_arr.length -2]
+
+
+  return result || -1
+};
+console.log(secondHighest('jkjhkjahkj1111lkhkhkl1h1111hlk1'))
