@@ -1,0 +1,33 @@
+var removeKdigits = function(num, k) {
+  let st = [];
+
+  for (const digit of num) {
+    while(st.length > 0 && st[st.length -1] > digit && k > 0) {
+    st.pop();
+    k--;
+    }
+    st.push(digit)
+  }
+  console.log(st )
+
+  st.reverse()
+  console.log(st)
+  while(st[st.length -1] === '0') {
+    console.log(st[st.length -1])
+    st.pop()
+  }
+  st.reverse();
+
+
+  while (k > 0) {
+    st.pop();
+    k--;
+  }
+
+  if(st.length === 0){
+    st.push('0')
+  }
+
+  return st.join('');
+};
+console.log(removeKdigits('10200', 1 ))
