@@ -1,0 +1,25 @@
+
+ var makeGood = function(s) {
+  let st = [];
+  for (const ch of s) {
+    st.push(ch);
+     
+    if (st.length > 1) {
+      let x = st[st.length - 1];
+      let y = st[st.length - 2];
+
+      if (isBad(x,y)){
+        st.pop();
+        st.pop();
+      }
+    }
+  }
+  return st.join('');
+    
+}
+function isBad(x,y){
+  return Math.abs(x.charCodeAt(0) - y.charCodeAt(0)) === 32;
+  
+}
+
+console.log(makeGood("abBAcC"))
