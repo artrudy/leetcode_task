@@ -1,0 +1,29 @@
+ var removeDigit = function(number, digit) {
+
+  if(number.indexOf(digit) === number.lastIndexOf(digit)) {
+    return number.split('').filter(it => it !== digit).join('')
+  }
+  let st = [];
+  let n = 1;
+  let delta = number.split('').filter(it => it === digit).length
+
+  for(const element of number){
+  if(st[st.length -1] === digit && element > st[st.length - 1] && n > 0){
+    st.pop();
+    n--;
+  }
+  st.push(element)
+  }
+  if (st.length !== number.length){
+    return   st.join('')
+  } else {
+
+  let arr = st.join('')
+  let b = arr.lastIndexOf(digit)
+  let a = arr.slice(0, b)
+
+  let c = arr.slice(b + 1, arr.length)
+  let result = [...a,...c]
+  return result.join('')
+  }
+};
