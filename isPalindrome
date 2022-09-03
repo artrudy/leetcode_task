@@ -1,0 +1,24 @@
+function isPalindrome(param){
+  function rec(a, b) {
+    if (a >= b) {
+        return 0;
+    }
+console.log('param[a]', param[a])
+
+console.log('param[b]', param[b])
+
+    if (param[a] === param[b]) {
+        return rec(a + 1, b - 1);
+    }
+
+      return Math.min(rec(a + 1, b), rec(a, b - 1)) + 1;
+  }
+
+  const disMatches = rec(0, param.length - 1);
+
+  const result = disMatches <= 1;
+
+  return result;
+}
+
+console.log(isPalindrome('abba'))
