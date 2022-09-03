@@ -1,0 +1,34 @@
+function stringcheck(subs, string) {
+  let result = true;
+  const subsArr = subs.split('');
+
+  const stringArr = string.split('');
+
+  let checkArr = [];
+
+for (let n = 0, m = 0; n < stringArr.length; n = n + 1) {
+  if (subsArr[m] === stringArr[n]) {
+    checkArr = checkArr.concat(n)
+    m = m + 1
+  }
+}
+
+const checkArrCopy = [...checkArr]
+
+checkArrCopy.sort((a, b) => a - b);
+
+if (checkArr.length < subsArr.length) {
+  result = false;
+  return result;
+}
+
+for (let i = 0; i <= checkArr.length; i = i + 1) {
+  if (checkArr[i] !== checkArrCopy[i]) {
+    result = false;
+    return result;
+  }
+}
+return result;
+}
+
+console.log(stringcheck('abc', 'abraaarbac'))
