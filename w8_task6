@@ -1,0 +1,9 @@
+function task6 (subs, string)  {
+  for (let n = 0; n < subs.length; n = n + 1) {
+    if (string.indexOf(subs[n]) < 0) {
+      return false
+    }
+  }
+return true
+}
+console.log(task6('abc', 'abraaarba'))
