@@ -1,0 +1,12 @@
+function removeUrlAnchor(url){
+  if (url.includes('#')){
+  let ind = url.indexOf('#')
+  console.log(ind)
+  return url.slice(0, ind)
+  }
+  else {
+    return url
+  }
+}
+
+console.log(removeUrlAnchor('www.codewars.com/katas/'))
