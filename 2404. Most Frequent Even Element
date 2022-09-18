@@ -1,0 +1,19 @@
+ var mostFrequentEven = function(nums) {
+  let result = - 1;
+  let newArr = nums.filter(it => it % 2 === 0)
+  newArr.sort()
+  let m = {};
+  for(let num of newArr){
+    m[num] = m[num] ? m[num] + 1 : 1;
+  }
+  let maximum = - 1;
+
+  for (let k of Object.keys(m)){
+
+    if (m[k] > maximum) {
+      maximum = m[k]
+      result = k
+    }    
+  }
+ return result   
+};
