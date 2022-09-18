@@ -1,0 +1,17 @@
+ var majorityElement = function(nums) {
+  let m = {};
+  let result = [];
+  for (let num of nums) {
+    m[num] = m[num] ? m[num] + 1 : 1;
+  }
+  for(let k of Object.keys(m)){
+    console.log(Math.floor(m[k]))
+    if (m[k] >= Math.floor(nums.length / 3)){
+      result = result.concat(k)
+
+    }
+  }
+return result
+    
+};
+console.log(majorityElement([3,2,3]))
