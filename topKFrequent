@@ -1,0 +1,13 @@
+var topKFrequent = function(nums, k) {
+  nums.sort()
+  let m = {};
+  for(let num of nums){
+    m[num] = m[num] ? m[num] + 1 : 1;
+  }
+  let arrArr = Object.entries(m)
+  arrArr.sort((a, b) => a[1] - b[1])
+  let resultArr = arrArr.map(it => it[0])
+  let result = resultArr.slice(resultArr.length - k)
+
+ return result   
+};
