@@ -1,0 +1,14 @@
+// var getConcatenation = function(nums) {
+//   let ans = nums.concat(nums)
+//   return ans
+    
+// };
+
+var getConcatenation = function(nums) {
+  let ans = [...nums]
+  for (let n of nums){
+    ans.push(n)
+  }
+  return ans
+    
+};
