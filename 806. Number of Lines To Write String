@@ -1,0 +1,23 @@
+var numberOfLines = function(widths, s) {   
+const alphArr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];    
+const sArr = s.split('')
+let preRes1 = sArr.map(it  => alphArr.indexOf(it));
+let sWidthArr = preRes1.map(it => widths[it]);
+const max = 100;
+let row  = 0;
+let rest = 0;
+for(let n = 0; n <= sWidthArr.length; n = n + 1){
+    if ((rest + sWidthArr[n])  <= max){
+        rest = rest + sWidthArr[n]
+        continue;
+    }
+    if ((rest + sWidthArr[n] ) > max){
+        row = row + 1;
+        rest = sWidthArr[n];
+    }
+}
+const result = [row +1, rest]
+return result
+}
+
+console.log(numberOfLines([10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10],  "abcdefghijklmnopqrstuvwxyz"))
