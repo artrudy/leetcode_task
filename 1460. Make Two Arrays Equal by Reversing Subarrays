@@ -1,0 +1,25 @@
+var canBeEqual = function(target, arr) {
+    let m = {}
+    for (let n of target){
+        m[n] = m[n]? m[n] + 1: 1;
+    }
+    let n = {};
+    for (let b of arr){
+        n[b] = n[b]? n[b] + 1: 1;
+    }
+
+
+    st = []
+for (let i of target){
+   
+if(m[i] !== n[i]){
+    st.push(i)
+}
+
+}
+return st.length === 0
+
+}
+
+
+console.log(canBeEqual([1,2,2,3], [1,1,2,3]))
