@@ -1,0 +1,26 @@
+var mostWordsFound = function(sentences) {
+    let resultArr = sentences.map(it => it. split(''))
+    let max = 0;
+    let result = 0;
+//console.log(resultArr)
+    for (let i = 0; i < resultArr.length; i = i +1){
+       // console.log(result[i])
+        for (let u = 0; u < resultArr[i].length; u = u + 1){
+          //  console.log(resultArr[i][u])
+            if (resultArr[i][u] === ' '){
+                max = max + 1;                
+            }
+          //  console.log('max', max)
+          //  console.log('result', result)
+        }
+        if (max > result){
+            result = max;
+            max = 0;
+        } else { 
+            max = 0;
+            }
+   // console.log('_________________________________________________________')
+    }
+    return result + 1
+    
+};
