@@ -1,0 +1,14 @@
+import React, {useState} from 'react'
+import ReactDOM from 'react-dom'  
+  
+function App(){
+  let [count, setCount] = useState(0)  
+  return <div>  
+   <button onClick={() => setCount(count = count + 1)} >+</button>  
+   <button onClick={() => setCount(count = count - 1)} >-</button>  
+  
+   <div>{count}</div>  
+</div>  
+}  
+  
+ReactDOM.render(<App />, document.querySelector('#app'))
