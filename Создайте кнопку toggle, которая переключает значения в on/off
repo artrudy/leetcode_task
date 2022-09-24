@@ -1,0 +1,14 @@
+  
+import React,{useState} from 'react'  
+import ReactDOM from 'react-dom'  
+  
+function App() {  
+  const [toggled, setStoggled] = useState(true)  
+  return <div>  
+   <button type="button" onClick={() => {
+        setStoggled(!toggled)}}>Toggle</button>  
+   <div>{toggled? 'on': 'off'}</div>  
+</div>  
+}  
+  
+ReactDOM.render(<App />, document.querySelector('#app'))  
