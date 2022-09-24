@@ -1,0 +1,23 @@
+var reversePrefix = function(word, ch) {
+    // let ind = word.indexOf(ch)
+    // let arr = word.split('').slice(0, ind + 1)
+    // let rest = word.split('').slice(ind + 1, word.length)
+    // let copyArr = [...arr]
+    // copyArr.reverse()
+    // let resultArr = copyArr.concat(rest)
+    // return resultArr.join('')
+
+    let ind = word.indexOf(ch)
+    let st = []
+    for (let i = ind; i >= 0; i = i - 1){
+        st.push(word[i])
+    }
+    for (let n = ind + 1; n < word.length; n = n + 1){
+        st.push(word[n])
+    }
+return st.join('')
+
+
+
+};
+console.log(reversePrefix("abcdefd", "d"))
