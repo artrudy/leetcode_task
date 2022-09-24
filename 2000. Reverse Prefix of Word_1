@@ -1,0 +1,11 @@
+var reversePrefix = function(word, ch) {
+    let ind = word.indexOf(ch)
+    let arr = word.split('').slice(0, ind + 1)
+    let rest = word.split('').slice(ind + 1, word.length)
+    let copyArr = [...arr]
+    copyArr.reverse()
+    let resultArr = copyArr.concat(rest)
+    return resultArr.join('')
+
+};
+console.log(reversePrefix("abcdefd", "d"))
