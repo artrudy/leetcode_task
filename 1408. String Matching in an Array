@@ -1,0 +1,14 @@
+var stringMatching = function(words) {
+    let st = [];
+    for (let i = 0; i < words.length; i = i + 1){
+        for (let n = 0; n < words.length; n = n + 1){
+            if (words[i].includes(words[n]) && n !== i && st.indexOf(words[n]) < 0){
+                st.push(words[n])                
+            }            
+        }
+    }
+    return st
+    
+};
+
+console.log(stringMatching(["leetcoder","leetcode","od","hamlet","am"]))
