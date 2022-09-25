@@ -1,0 +1,21 @@
+var isAnagram = function(s, t) {
+    let result= [];
+    if (s.length !== t.length){
+        result  = ['mistake']
+        return result.length === 0
+    }
+    let arr1 = s.split('').sort()
+    let arr2 = t.split('').sort()
+    
+    for (let i = 0; i < s.length; i = i + 1){
+        if (arr1[i] !== arr2[i]){
+            result.push(arr1[i])
+        }
+    }
+    return result.length === 0
+    
+    
+    
+};
+
+console.log(isAnagram("anagram", "nagaram"))
