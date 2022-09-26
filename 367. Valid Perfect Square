@@ -1,0 +1,26 @@
+var isPerfectSquare = function(num) {
+    let start = 0;
+    let end = num/2;
+    let mid;
+    let square;
+    
+    if (num < 2){
+        end = num;
+    }
+    
+    while(start <= end) {
+        mid = Math.floor((start + end)/2);
+        square = mid * mid;
+        if (square === num){
+            end = mid;
+            break;
+        }
+        if (square > num){
+            end = mid - 1
+        } else {
+            start = mid + 1
+        }
+    }
+    return end * end === num 
+};
+console.log(isPerfectSquare(14))
