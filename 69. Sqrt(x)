@@ -1,0 +1,27 @@
+var mySqrt = function(x) {
+    let start = 0;
+    let end = x/2;
+    let mid;
+    let square;
+    
+    if (x < 2){
+        end = x;
+        return end;
+    }
+    
+    while(start <= end) {
+        mid = Math.floor((start + end)/2);
+        square = mid * mid;
+        if (square === x){
+            result = mid;
+            return result;
+        }
+        if (square > x){
+            end = mid - 1
+        } else {
+            start = mid + 1
+        }
+    }
+    return Math.floor(end)
+};
+console.log(mySqrt(3))
