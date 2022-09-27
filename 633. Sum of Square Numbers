@@ -1,0 +1,13 @@
+var judgeSquareSum = function(c) {
+    let dobleB;
+    for(let i = 0; (i * i) <= c; i = i + 1) {
+        dobleB = Math.sqrt(c - i * i);
+        if (dobleB == parseInt(dobleB)) {
+            return true;
+        }
+    }   
+    return false
+ 
+};
+
+console.log(judgeSquareSum(8))
