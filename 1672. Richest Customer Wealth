@@ -1,0 +1,14 @@
+var maximumWealth = function(accounts) {
+    let arr = [];
+    let sum = 0;
+    for (let n = 0; n < accounts.length; n = n + 1){
+        for (let i = 0; i < accounts[n].length; i = i + 1){
+            sum = sum + accounts[n][i]
+        }
+        arr.push(sum);
+        sum = 0;
+    }
+    arr.sort((a, b) => a - b)
+    return arr[arr.length - 1]    
+};
+console.log(maximumWealth([[1,5],[7,3],[3,5]]))
