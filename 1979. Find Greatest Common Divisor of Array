@@ -1,0 +1,18 @@
+var findGCD = function(nums) {
+    let arr = [...nums]
+    arr.sort((a, b) => a - b)
+    let dividor = 1;
+    let smalest = arr[0]
+    let largest = arr[arr.length - 1]
+    for (let i = 1; i <= smalest; i = i + 1) {
+        if( smalest % i === 0 && largest % i === 0) {
+            if (i > dividor){
+                dividor = i
+            }
+        }
+
+    }
+     return dividor
+    
+};
+console.log(findGCD([3,3]))
