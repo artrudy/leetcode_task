@@ -1,0 +1,21 @@
+var merge = function(nums1, m, nums2, n) {
+    let newLen = nums1.length - m;
+
+    while( nums1.length > m){
+        nums1.pop()
+    }
+
+
+
+    // for(let i = 0; i < m; i = i + 1){
+    //     nums1.pop()
+    // }   
+   // console.log(nums1) 
+    for(let j = 0; j < n; j = j + 1){
+        nums1.push(nums2[j])
+    }
+    nums1.sort((a, b) => a - b)
+    return nums1
+};
+
+console.log(merge([1], 1, [], 0))
