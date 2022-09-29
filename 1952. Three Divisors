@@ -1,0 +1,10 @@
+var isThree = function(n) {
+    let st = [];
+    for (let i = 0; i <= n; i = i + 1){
+        if (n % i === 0){
+            st.push(i);
+        }
+    }
+    return st.length === 3;
+};
+console.log(isThree(4))
