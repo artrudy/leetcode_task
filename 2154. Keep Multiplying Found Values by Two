@@ -1,0 +1,8 @@
+var findFinalValue = function(nums, original) {
+    let numb = original;
+    while(nums.includes(numb)){
+        numb = numb * 2;
+    }
+    return numb    
+};
+console.log(findFinalValue([2,7,9], 4))
