@@ -1,0 +1,13 @@
+var dominantIndex = function(nums) {
+    let arr = [...nums]
+    arr.sort((a, b) => a - b);
+    let max = arr[arr.length - 1];
+    result = nums.indexOf(max)
+    for (let i = arr.length - 2; i >= 0; i = i - 1){
+        if (arr[i] * 2 > max){
+            result = -1;
+        }
+    }
+    return result;
+};
+console.log(dominantIndex([3,6,1,0]))
