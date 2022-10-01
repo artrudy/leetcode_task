@@ -1,0 +1,9 @@
+var thirdMax = function(nums) {
+    let setFrom = new Set(nums)
+    let arrFrom = Array.from(setFrom)
+    arrFrom.sort((a, b) => a - b)
+    result = arrFrom.length > 2? arrFrom[arrFrom.length -3]: arrFrom[arrFrom.length -1]
+    return result    
+};
+
+console.log(thirdMax([1, 2]))
