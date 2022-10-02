@@ -1,0 +1,25 @@
+function isPalindrome(param, count = 0) {
+    let str = param.toLowerCase();
+
+    if(count > 0){
+        const str1 = str.slice(0, str.length - 1);
+        const str2 = str.slice(1);
+
+        const count1 = isPalindrome(str1)
+        const count2 = isPalindrome(str2)
+
+        str = count1 < count2 ? str1: str2; 
+    }
+   
+    for (let i = 0; i < str.length; i += 1) {
+        if (str[i] !== str[str.length - i - 1]) {
+            count += 1;
+            const slicedString = str.slice(i, str.length - i);
+           
+            return isPalindrome(slicedString, count)  
+        }
+    }
+return count
+}
+
+console.log(isPalindrome('Abrar1234ba'))
