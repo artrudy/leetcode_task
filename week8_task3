@@ -1,0 +1,21 @@
+function isPalindrome(param, count = 0) {
+    let str = param.toLowerCase();
+    if (count > 1) {
+        return false;
+    }
+    if (count > 0) {
+        if (str[0] === str[str.length - 2]) {
+            str = str.slice(0, str.length - 1)
+        } else {
+            str = str.slice(1)
+        }
+    }    
+    for (let i = 0; i < str.length; i += 1) {
+        if (str[i] !== str[str.length - i - 1]) {
+            count += 1;
+            const slicedString = str.slice(i, str.length - i);
+            return isPalindrome(slicedString, count)  
+        }
+    }
+return true
+}
