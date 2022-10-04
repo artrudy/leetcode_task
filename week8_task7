@@ -1,10 +1,10 @@
-const task7 = (subs, srting) => {
-    
+const task7 = (subs, string) => {   
     let minCount = Infinity;
 
     function func(sub, str) {
         let count = 0;
         let amount = 0;
+
         for (let i = 0; i < str.length; i += 1) {
             if (sub[count] === str[i]) {
                 count += 1;
@@ -18,13 +18,20 @@ const task7 = (subs, srting) => {
         }
         return 0;
     }
-for (let i = 0; i < string.length; i += 1) {
-    if (subs.length === minCount) {
-        return minCount
+
+    for (let i = 0; i < string.length; i += 1) {
+        if (subs.length === minCount) {
+            return minCount
+        }
+        if (subs[0] === string[i]) {
+            const result = func(subs, string.slice(i))
+            minCount = minCount > result && result !== 0 ? result : minCount;
+            }
+        if (minCount < subs.length || minCount === Infinity) {
+            return 0
+        }
     }
-    if (subs[0] === string[i]) {
-        const result = func (subs, srting.slice(i))
-        minCount = minCount > result && result !== 0 ? result : minCount;
-    }
+    return minCount
 }
-}
+
+console.log(task7( 'abc', 'abdcabc'))
