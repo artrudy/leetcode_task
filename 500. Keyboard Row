@@ -1,0 +1,28 @@
+var findWords = function(words) {
+    let result = []
+    let arr = words.map(it => it.toLowerCase());
+    let keyboardRowArr = ["qwertyuiop", "asdfghjkl", "zxcvbnm"]
+
+    for (let i = 0; i < words.length; i += 1) {
+        for (let n of keyboardRowArr){
+            if (n.includes(arr[i][0])) {
+                if (arr[i].length === 1){
+                    result.push(words[i])
+                } else {
+                    for (let j = 1; j < arr[i].length; j += 1){
+                        if(n.indexOf(arr[i][j]) < 0){
+                            break
+                        } if(j === arr[i].length - 1){
+                            result.push(words[i])
+                            break
+                        }
+                    }
+                }
+                
+            }            
+        }     
+    }
+    return result       
+};
+
+console.log(findWords(["Hello","Alaska","Dad","Peace"]))
