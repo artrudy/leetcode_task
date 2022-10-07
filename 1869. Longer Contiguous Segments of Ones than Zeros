@@ -1,0 +1,30 @@
+var checkZeroOnes = function(s) {
+    let countZero = 0;
+    let maxZero = 0;
+    let countOne = 0;
+    let maxOne = 0;
+    for (let i = 0; i < s.length; i += 1){
+        // console.log('s[i]', s[i])
+
+        if (s[i] === '1'){
+            countZero = 0;
+            countOne += 1;
+            if (countOne > maxOne) {
+                maxOne = countOne;
+                // console.log('countOne', countOne)
+                // console.log('maxOne', maxOne)
+            } 
+        } else {
+            countOne = 0;
+            countZero += 1;
+            if (countZero > maxZero){
+                maxZero = countZero
+                // console.log('countZero', countZero)
+                // console.log('maxZero', maxZero)
+            }
+        }
+    }
+    return maxOne > maxZero    
+};
+
+console.log(checkZeroOnes( "110100010"))
