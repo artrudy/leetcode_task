@@ -1,0 +1,17 @@
+var capitalizeTitle = function(title) {
+    let mem;
+    let st = []
+    let arr = title.split(' ')
+    for(let n = 0; n < arr.length; n += 1) {
+        if(arr[n].length <= 2){
+            st.push(arr[n].toLowerCase())
+        } else {
+            mem = arr[n].toLowerCase();
+            mem = mem.replace(mem[0], mem[0].toUpperCase())
+            st.push(mem)
+        }
+    }
+    let result = st.join(' ')
+    return result
+}    
+console.log(capitalizeTitle("First leTTeR of EACH Word"))
