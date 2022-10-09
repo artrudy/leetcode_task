@@ -1,0 +1,20 @@
+var containsNearbyDuplicate = function(nums, k) {
+    let result = false
+    for(let i = 0; i < nums.length; i += 1){
+        for (let j = i + 1; j < nums.length; j += 1){
+            // console.log('i', i)
+            // console.log('nums[i]', nums[i])
+            // console.log('j', j)
+            // console.log('nums[j]', nums[j])
+            // console.log('Math.abs(i - j)', Math.abs(i - j))
+            if(nums[i] === nums[j] && (Math.abs(i - j) <= k)){
+                let result = true;
+                return result;
+                break;
+            }
+        }
+        
+    }
+    return result;    
+};
+console.log(containsNearbyDuplicate([1,2,3,1],  3))
