@@ -1,0 +1,18 @@
+var findLengthOfLCIS = function(nums) {
+    let current = 0;
+    let maximum = 0;
+    for (let i = 0; i < nums.length; i += 1) {
+        if( nums[i] < nums[i + 1]){
+            current += 1;
+            if (current > maximum) {
+                maximum = current
+            }
+        }
+        if (nums[i] >= nums[i + 1]){
+            current = 0;
+        }
+    }
+    return maximum + 1;
+    
+};
+console.log(findLengthOfLCIS([2,2,2,2,2]))
