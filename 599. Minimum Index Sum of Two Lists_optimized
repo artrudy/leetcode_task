@@ -1,0 +1,24 @@
+var findRestaurant = function(list1, list2) {
+    let maximum = list1.length - 1 + list2.length - 1
+    let st = [];
+    // let commonArr  = list1.filter(it => list2.indexOf(it) >= 0);
+    // console.log(commonArr)
+    for(let n of list1) {
+        if (list2.indexOf(n) >= 0) {
+        // console.log(n)
+        // console.log(list1.indexOf(n) + list2.indexOf(n))
+
+        if((list1.indexOf(n) + list2.indexOf(n)) === maximum){
+            st.push(n);
+            maximum = list1.indexOf(n) + list2.indexOf(n)
+            }
+        if((list1.indexOf(n) + list2.indexOf(n)) < maximum){
+            st.pop()
+            st.push(n)
+            maximum = list1.indexOf(n) + list2.indexOf(n)
+            }
+        }             
+    }    
+    return st
+};
+console.log(findRestaurant(["happy","sad","good"], ["sad","happy","good"]))
