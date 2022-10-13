@@ -1,0 +1,17 @@
+var divideArray = function(nums) {
+    let result = true
+    let numsSorted = [...nums]
+    numsSorted.sort((a, b) => a - b)
+    for (let i = 0; i < nums.length; i += 1){   
+        if (numsSorted[i] === numsSorted[i + 1]){
+            // numsSorted.shift();
+            // numsSorted.shift();
+            i += 1;
+        } else {
+            result = false;
+            return result;
+            break;
+        }
+    }
+    return result 
+};
