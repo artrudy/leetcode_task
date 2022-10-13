@@ -1,0 +1,15 @@
+var divideArray = function(nums) {
+    const map = new Map;
+    let result = true;
+    for(let n of nums){
+        map.set(n, (map.get(n) || 0) + 1)
+    }
+    for (let i of map.keys()){
+        if(map.get(i) % 2 !== 0){
+            result = false;
+            return result;
+            break;
+        }
+    }
+return result
+};
