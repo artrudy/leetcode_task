@@ -1,0 +1,14 @@
+var sortPeople = function(names, heights) {
+    let sortdeNameArr = [];
+    let sortedHeightsArr = [];
+    let current;
+    sortedHeightsArr = [...heights]
+    sortedHeightsArr.sort((a, b) => b - a)
+    for (let i = 0; i < names.length; i += 1) {
+        current = names[heights.indexOf(sortedHeightsArr[i])];
+        sortdeNameArr.push(current);
+    }
+    return sortdeNameArr      
+};
+
+console.log(sortPeople(["Mary","John","Emma"], [180,165,170]))
