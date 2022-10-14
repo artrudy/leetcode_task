@@ -1,0 +1,17 @@
+var finalPrices = function(prices) {
+    let result = [];
+    let newPrice;
+    for (let i = 0; i < prices.length; i += 1){
+        newPrice = prices[i];
+        for (let j = i + 1; j < prices.length; j += 1){
+            if (prices[j] <= prices[i]){
+                newPrice = prices[i] - prices[j];
+                break;
+            }
+        }
+        result.push(newPrice);
+    }
+    return result
+}
+  console.log(finalPrices([8,4,6,2,3]))
+  console.log('Output: 
