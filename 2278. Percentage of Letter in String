@@ -1,0 +1,11 @@
+var percentageLetter = function(s, letter) {
+    let counter = 0;
+    for(let i of s){
+        if(i === letter){
+            counter += 1
+        }
+    }
+    return Math.floor(100 * counter/ s.length)    
+};
+
+console.log(percentageLetter("foobar", "o"))
