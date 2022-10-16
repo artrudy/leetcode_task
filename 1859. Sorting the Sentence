@@ -1,0 +1,11 @@
+var sortSentence = function(s) {
+    let arr1 = s.split(' ')
+    let arr2 = arr1.map( it => it.split(''))
+    arr2.sort((a, b) => a[a.length -1] - b[b.length -1])
+    let resultArr = [];
+    for (let i = 0; i < arr2.length; i +=  1){
+        arr2[i].pop()
+        resultArr.push(arr2[i].join(''))
+    }
+    return resultArr.join(' ')    
+};
