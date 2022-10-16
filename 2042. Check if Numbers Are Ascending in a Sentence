@@ -1,0 +1,13 @@
+var areNumbersAscending = function(s) {
+    let result = true;
+    let newString = s.match(/\d+/g).map(Number);
+    for (let i = 0; i < newString.length; i += 1){
+        if (newString[i] >= newString[i + 1]){
+            result = false;
+            return result;
+            break
+        }
+    }
+   return result
+};
+console.log(areNumbersAscending("hello world 5 x 5"))
