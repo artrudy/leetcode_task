@@ -1,0 +1,12 @@
+var firstUniqChar = function(s) {
+    let result = -1;
+    for(let n of s){
+        if(s.indexOf(n) === s.lastIndexOf(n)){
+            result = s.indexOf(n)
+            return result;
+            break;
+        }
+    }
+    return result    
+};
+console.log(firstUniqChar("leetcode"))
