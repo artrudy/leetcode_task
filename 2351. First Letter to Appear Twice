@@ -1,0 +1,12 @@
+var repeatedCharacter = function(s) {
+    let m = {};
+    for (let n of s){
+        m[n] = m[n] ? m[n] + 1 : 1;
+        if(m[n] === 2){
+            return n;
+            break;
+        }
+    }
+    return n
+};
+console.log(repeatedCharacter("abccbaacz"))
