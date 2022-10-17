@@ -1,0 +1,15 @@
+countAsterisks = function(s) {
+  let countAst = 0;
+  let countBar = 0;
+  for(let i in s){    
+    if(s[i] === '|'){
+      countBar += 1;
+    }
+    if(countBar % 2 === 0 && s[i] === '*'){
+      countAst += 1
+    }
+  }
+  return countAst
+    
+};
+console.log(countAsterisks( "l|*e*et|c**o|*de|"))
