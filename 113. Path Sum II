@@ -1,0 +1,24 @@
+var pathSum = function(root, targetSum) {
+  let acc = [];
+  let st = [];
+
+  const dfs = (node, sum) => {    
+    if(node === null) return;
+    st.push(node.val)
+    if (node.left === null && node.right === null && node.val === sum){
+      acc.push([...st])
+    }
+    if(node.left !== null){
+      dfs(node.left, sum - node.val)
+    st.pop()
+    }
+    if(node.right !== null){
+      dfs(node.right, sum - node.val)
+      st.pop()
+    }
+  }
+  dfs(root, targetSum)
+  return acc  
+};
+
+console.log(pathSum([5,4,8,11,null,13,4,7,2,null,null,5,1], 22))
