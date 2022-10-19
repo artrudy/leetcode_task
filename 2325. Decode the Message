@@ -1,0 +1,16 @@
+var decodeMessage = function(key, message) {
+    let map = new Set(key)
+    let key_undubl = Array.from(map).filter(it => it !== ' ')
+    let key_undublWithblank = key_undubl.push(' ')
+    let decodeArr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z', ' '];
+    let resultArr = []
+    for (let i = 0; i < message.length; i += 1){
+        resultArr.push(decodeArr[key_undubl.indexOf(message[i])])
+    }
+    return resultArr.join('')    
+};
+
+    
+console.log(decodeMessage("eljuxhpwnyrdgtqkviszcfmabo", "zwx hnfx lqantp mnoeius ycgk vcnjrdb"))
+    
+    
