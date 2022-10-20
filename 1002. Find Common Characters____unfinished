@@ -1,0 +1,19 @@
+var commonChars = function(words) {
+    let st = []
+    wordsArr = words.map(it => [...it])
+    console.log(wordsArr)
+    let checkCounter = 0;
+    let firstWordArr = wordsArr[0]
+    for (let i = 0; i < wordsArr.length; i += 1){
+        for (let n = 0; n < firstWordArr.length; n += 1){
+            if(wordsArr[i].indexOf(firstWordArr[n])){
+                checkCounter += 1;
+            }
+            if ()
+
+        }        
+    }
+    
+};
+
+console.log(commonChars(["bella","label","roller"]))
