@@ -1,0 +1,31 @@
+var intersect = function(nums1, nums2) {
+  nums1.sort((a, b) => a - b)
+  nums2.sort((a, b) => a - b)
+  // console.log(nums1, nums2)
+  let st = []
+  for (let i = 0; i < nums1.length; i += 1){
+    // console.log('nums1[i]', nums1[i])
+    // console.log('nums2[i]', nums2[i])
+    // console.log('nums1', nums1)
+    // console.log('nums2', nums2)
+    if(nums1[i] === nums2[i]){
+      st.push(nums1[i])
+      nums1.shift()
+      nums2.shift()
+      i = i - 1      
+    }
+    if (nums1[i] < nums2[i]){
+      nums1.shift()
+      console.log('nums1', nums1)
+      i -= 1;        
+    }
+    if (nums1[i] > nums2[i]){
+      nums2.shift()
+      console.log('nums2', nums2) 
+      i -= 1;
+    }    
+  }
+  return st    
+};
+
+console.log(intersect( [4,9,5], [9,4,9,8,4]))
