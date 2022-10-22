@@ -1,19 +1,18 @@
-var commonChars = function(words) {
-    let st = []
-    wordsArr = words.map(it => [...it])
-    console.log(wordsArr)
-    let checkCounter = 0;
-    let firstWordArr = wordsArr[0]
-    for (let i = 0; i < wordsArr.length; i += 1){
-        for (let n = 0; n < firstWordArr.length; n += 1){
-            if(wordsArr[i].indexOf(firstWordArr[n])){
-                checkCounter += 1;
-            }
-            if ()
+ var commonChars = function(A) {
+        let res = [...A[0]];
+        console.log(res)
+        for (let i = 1; i < A.length; i++) {
+          res = res.filter(it => {
+            console.log('it', it)
+            const l = A[i].length;
+            console.log('A[i].length', A[i].length)
+            console.log('A[i]', A[i])
+            A[i] = A[i].replace(it, "");
+            return l > A[i].length;
+          });
+        }
+        return res;
+      };
 
-        }        
-    }
-    
-};
-
-console.log(commonChars(["bella","label","roller"]))
+console.log(commonChars(["cool","lock","cook"]))
+console.log('Output: [c, o]')
