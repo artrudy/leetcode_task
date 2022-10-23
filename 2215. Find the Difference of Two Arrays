@@ -1,0 +1,10 @@
+var findDifference = function(nums1, nums2) {
+  let nums1Set = new Set(nums1)
+  let nums2Set = new Set(nums2)
+  let nums1Filtered = Array.from(nums1Set)
+  let nums2Filtered = Array.from(nums2Set)
+  let st1 = nums1Filtered.filter(it => nums2Filtered.indexOf(it) < 0)
+  let st2 = nums2Filtered.filter(it => nums1Filtered.indexOf(it) < 0)
+  return [st1, st2]    
+};
+console.log(findDifference( [1,2,3,3], [1,1,2,2]))
