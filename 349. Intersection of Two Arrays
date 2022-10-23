@@ -1,0 +1,8 @@
+var intersection = function(nums1, nums2) { 
+  let nums1Set = new Set(nums1)
+  let nums1Filtered = Array.from(nums1Set)
+  let result = nums1Filtered.filter(it => nums2.indexOf(it) >= 0)
+  return result    
+};
+
+console.log(intersection([4,9,5], [9,4,9,8,4]))
