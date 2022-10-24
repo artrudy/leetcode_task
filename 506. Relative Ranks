@@ -1,0 +1,15 @@
+var findRelativeRanks = function(score) {
+  let sortedScore = [...score].sort((a, b) => b - a)
+  let resultArr = ["Gold Medal","Silver Medal","Bronze Medal"]
+  for (let i = 4; i <= score.length; i += 1){
+    resultArr.push(`${i}`)
+  }
+  // console.log(resultArr)
+  let output = [];
+  for (let n = 0 ; n < score.length; n += 1){
+    // console.log(sortedScore.indexOf(score[n]))
+    output.push(resultArr[sortedScore.indexOf(score[n])])
+  }
+  return output    
+};
+console.log(findRelativeRanks([10,3,8,9,4]))
