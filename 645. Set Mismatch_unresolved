@@ -1,0 +1,15 @@
+var findErrorNums = function(nums) {
+  nums.sort((a, b) => a - b)
+  let arr = Array(nums.length).fill(0).map((it, index) => it = index + 1)
+  let result = []
+  for(let n = 0 ; n < nums.length; n += 1){
+    if (nums.indexOf(arr[n]) < 0 ){
+      result.push(arr[n])
+    }
+    if (nums.indexOf(nums[n])!== nums.lastIndexOf(nums[n])){
+      result.push(nums[n])
+    }
+  }
+  return result    
+};
+console.log(findErrorNums([2, 2]))
