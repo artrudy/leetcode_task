@@ -1,0 +1,29 @@
+var interchangeableRectangles = function(rectangles) {
+  let counter = 0;
+  // for (let i = 0; i < rectangles.length; i += 1){
+  //   for (j = i+1; j < rectangles.length; j += 1){
+  //     if(rectangles[i][0]/rectangles[i][1] == rectangles[j][0] / rectangles[j][1]){
+  //       // console.log('nums[i]', nums[i], 'i', i)
+  //       // console.log('nums[j]', nums[j], 'j', j)
+  //       counter += 1
+  //     }
+  //   }
+  // }
+  // return counter
+  let m = {};
+  let ratio = 0;
+  for(let y = 0; y < rectangles.length; y += 1){
+    ratio = rectangles[y][0] / rectangles[y][1]
+    m[ratio] = m[ratio]? m[ratio] + 1: 1
+
+  }
+  console.log(m)
+  let arr = Object.values(m)
+  for (let count of arr){
+    counter += (count * (count - 1) / 2);
+  }
+ 
+  return counter
+    
+};
+console.log(interchangeableRectangles([[1,7],[2,8],[8,8],[2,5],[2,8],[7,4]]))
