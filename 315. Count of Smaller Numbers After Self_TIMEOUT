@@ -1,0 +1,22 @@
+var countSmaller = function(nums) {
+    let result = [];
+    let counter = 0;
+    for (let i = 0; i <= nums.length; i += 1){
+        for (let j = i + 1; j <= nums.length; j += 1){
+            // console.log("nums[i]", nums[i])
+            // console.log("nums[j]", nums[j])
+            // console.log('nums[i] > nums[j]', nums[i] > nums[j])
+            // console.log(counter, 'counter')
+            if (nums[i] > nums[j]){
+                counter += 1
+            }
+            if(j === nums.length ){
+                result.push(counter);
+                // console.log('result', result)
+                counter = 0;
+            }
+        }
+    }
+    return result    
+};
+console.log(countSmaller([-1,-1]))
