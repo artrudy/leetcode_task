@@ -1,0 +1,15 @@
+var numJewelsInStones = function(jewels, stones) {
+    let m = {};
+    for (let n of jewels){
+        m[n] = m[n]? m[n] + 1 : 1
+    }
+    let counter = 0;
+    for (let x of stones){
+        if (m[x] !== undefined){
+            counter += 1
+        }
+    }
+    return counter
+};
+
+console.log(numJewelsInStones("z", "ZZZZZ"))
