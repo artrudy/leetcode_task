@@ -1,0 +1,27 @@
+var longestSubstring = function(s, k) {
+
+    function findLenOfMaxSubstring(from, to){
+        const m = {};
+        for (let i = from; i < to; i ++){
+            m[s[i]] = m[s[i]]? m[s[i]] + 1: 1;
+        }
+        let pivotIndex = -1;
+        for(let j = from; j < to; j ++){
+            if(m[s[j]] < k){
+                pivotIndex = j;
+                break;
+            }
+        }
+        if(pivotIndex === -1){
+            return to - from;
+        }
+        return Math.max(
+            findLenOfMaxSubstring(from, pivotIndex),
+            findLenOfMaxSubstring(pivotIndex + 1, to)
+        )
+
+    }
+    return findLenOfMaxSubstring(0, s.length)
+
+    
+};
