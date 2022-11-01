@@ -1,0 +1,12 @@
+var isPowerOfFour = function(n) {
+    let result = false
+    let UpperLim = Math.sqrt(n) + 1
+    for (let i = 0; i <= UpperLim; i += 1){
+        if (Math.pow(4, i) === n){
+            result = true;
+            return result
+        }
+    }    
+    return result    
+};
+console.log(isPowerOfTwo(8))
