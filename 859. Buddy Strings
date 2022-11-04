@@ -1,0 +1,79 @@
+var buddyStrings = function(s, goal) {
+    let result = false;
+    let stS = []
+    let stGoal = []
+    let dublicateArr = []
+    let sArr  = [...s]
+    let goalArr = [...goal]
+
+    if (s.length !== goal.length){
+        result =  false;
+        return result;
+    }   
+
+    for (let i = 0; i < sArr.length; i += 1){
+        // console.log('sArr[i]',sArr[i])
+        // console.log(goalArr[i])   
+
+        if (sArr.lastIndexOf(sArr[i]) !== sArr.indexOf(sArr[i]) && goalArr.indexOf(sArr[i]) !== goalArr.lastIndexOf(sArr[i])){
+            dublicateArr.push(sArr[i])
+        }     
+        if (sArr[i] === goalArr[i]){
+            // sArr.shift();
+            // goalArr.shift()
+            // i -= 1
+        } else {
+            stS.push(sArr[i])
+            // sArr.shift()
+            stGoal.push(goalArr[i])
+            // goalArr.shift()
+            // i -= 1;
+        }
+    }
+
+    // console.log(stS, 'stS')
+
+    if (dublicateArr.length >= 2){
+        result = true; 
+        return result;        
+    } else {
+        if(stGoal.length !== stS.length || stGoal.length > 2 || stS.length > 2 || stS.length === 0){
+            result = false;
+            return result;
+            }
+    
+        let reversedArr = [...stGoal]
+        reversedArr.reverse()
+        let checker = 0;   
+    
+        let resArr = stS.filter(it => stGoal.indexOf(it) < 0)
+        // console.log(resArr, 'resArr')
+    
+        // console.log(reversedArr, 'reversedArr')
+        // console.log(stS, 'stS')
+        // console.log(dublicateArr, 'dublicateArr')
+    
+    
+        for (let c = 1; c < 2; c += 1){
+            if (reversedArr[c] !== stS[c]){
+                checker += 1;
+            }
+        }
+    
+        // console.log(checker, 'checker') 
+    
+    
+        if (resArr.length === 0 && checker === 0){
+            result = true;
+            return result
+        }
+
+    }
+
+   
+    return result
+
+
+
+};
+console.log(buddyStrings('aa', 'aa'))
