@@ -1,0 +1,11 @@
+var commonFactors = function(a, b) {
+    let st = [];
+    for (let i = 0; i <= Math.min(a,b); i += 1){
+        if (a % i === 0 && b % i === 0){
+            st.push(i)
+        }
+    }
+    return st.length
+    
+};
+console.log(commonFactors(25, 30))
