@@ -1,0 +1,24 @@
+var divideString = function(s, k, fill) {
+    let rest = s.length % k;
+    let restArr = [];
+    let resArr = [];
+    let part;
+    if (rest === 0){
+        for (let i = 0; i < s.length; i += k){
+            part = s.slice(i, i + k)
+            resArr.push(part)            
+        }
+    } else {
+        for (let i = 0; i < s.length; i += k){
+            part = s.slice(i, i + k)
+            resArr.push(part)            
+        }
+        restArr = new Array(k - rest).fill(fill).join('')
+        let lastAppend =  resArr[resArr.length - 1].concat(restArr)
+        resArr.pop();
+        resArr.push(lastAppend)
+    }    
+    return resArr    
+};
+
+console.log(divideString( "abcdefghinmcb", 3, "x"))
