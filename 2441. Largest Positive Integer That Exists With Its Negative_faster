@@ -1,0 +1,16 @@
+var findMaxK = function(nums) {
+    // let result = -1;
+    let biggestNumber = 0;
+    // let sortArr = [...nums].sort((a,b) => a - b)
+    for (let i = 0; i < nums.length; i += 1){
+        if (nums.indexOf(- nums[i]) >= 0){
+            biggestNumber = Math.abs(nums[i]) > biggestNumber ? Math.abs(nums[i]) : biggestNumber
+            // if (Math.abs(nums[i]) > biggestNumber){
+            // }            
+        }
+    }
+
+    let result = biggestNumber !== 0 ? biggestNumber : -1
+    return result    
+};
+console.log(findMaxK([-10,8,6,7,-2,-3]))
