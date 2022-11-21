@@ -1,0 +1,15 @@
+var countDistinctIntegers = function(nums) {
+    let numsOrig = [...nums]
+    for (let i = 0; i < nums.length; i += 1){
+        let reN = `${nums[i]}`.split('').reverse().join('')
+        // console.log(`${nums[i]}`.split(''))
+        // console.log(reN)
+        numsOrig.push(+reN)
+        // console.log(numsOrig)
+    }
+    let numSet = new Set(numsOrig)
+    let distArr = Array.from(numSet)
+    return distArr.length    
+};
+
+console.log(countDistinctIntegers([2,2,2]))
