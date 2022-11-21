@@ -1,0 +1,11 @@
+var findMaxK = function(nums) {
+    let result = -1;
+    let sortArr = [...nums].sort((a,b) => a - b)
+    for (let i = 0; i < sortArr.length; i += 1){
+        if (nums.indexOf(- sortArr[i]) >= 0){
+            result = Math.abs(sortArr[i])            
+        }
+    }
+    return result    
+};
+console.log(findMaxK([-1,10,6,7,-7,1]))
