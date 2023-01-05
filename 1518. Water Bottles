@@ -1,28 +1,26 @@
 var numWaterBottles = function(numBottles, numExchange) {
-    let restEmpty = 0;
-    let prevRestEmpty = 0;
-    let curBotle = numBottles;
+    
+    let full = numBottles;
+    let empty = numBottles;
+    let summ = numBottles;
+    
     if (numExchange > numBottles){
         let result = numBottles;
         return result;
     }
-
     if (numExchange === numBottles){
         let result = numBottles + 1
         return result
     }
 
-    for (let i = curBotle; i > numExchange; i = i - restEmpty){
-
+    while (empty >= numExchange) {
+        full = Math.floor(empty / numExchange);
+        // console.log(full, 'full')
+        summ += full;
+        // console.log(summ, 'summ')
+        empty = empty - full * numExchange;
+        // console.log(empty, 'empty')
+        empty += full;        
     }
-
-    // while (curBotle >= numExchange) {
-    //     restEmpty = curBotle % numExchange;
-    //     console.log(restEmpty)        
-    // }
-
-
-    
+    return summ   
 };
-
-console.log(numWaterBottles(15, 4))
