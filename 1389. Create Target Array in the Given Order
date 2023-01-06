@@ -1,0 +1,15 @@
+var createTargetArray = function(nums, index) {
+    let arr  = [];
+    let subArr = []
+    console.log(index.length)
+    for (let i = 0; i < index.length; i += 1){
+            if (arr[index[i]] !== undefined) {
+                arr.splice(index[i], 0, nums[i])
+                }
+            else {
+                arr[index[i]] = nums[i]
+                }
+        }
+    return arr
+};
+console.log(createTargetArray([1,2,3,4,0], [0,1,2,3,0]))
