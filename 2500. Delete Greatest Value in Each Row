@@ -1,0 +1,25 @@
+var deleteGreatestValue = function(grid) {
+    arr = []
+    result = 0
+    for (let j = 0; j < grid[0].length; j){
+    for (let i = 0; i < grid.length; i += 1){
+        grid[i].sort((a, b) => a - b)
+        // console.log(grid[i], 'grid[i]')
+        arr.push(grid[i][grid[i].length - 1])
+        grid[i].pop()       
+        // console.log(grid, 'grid')
+        // console.log(result, 'result')
+        // console.log("-----------------------------------------")
+    }
+    // console.log(arr, 'arr')
+    arr.sort((a, b ) => a- b)
+    while(arr.length > 1) {
+        arr.shift()
+    }
+    // console.log(arr, 'arr')
+    result += arr[0]
+    arr.shift()
+}    
+    return result    
+};
+console.log(deleteGreatestValue([[10]]))
