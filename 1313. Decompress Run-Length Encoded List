@@ -1,0 +1,12 @@
+var decompressRLElist = function(nums) {
+    let l = nums.length;
+    let arr = [];
+    for (let i = 0; i < l; i += 2){
+        for(let j = 0; j < nums[i]; j += 1){
+            arr.push(nums[i + 1])
+        }    
+    }
+    return arr    
+};
+
+console.log(decompressRLElist([1,2,3,4]))
