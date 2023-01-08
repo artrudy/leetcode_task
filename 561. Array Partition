@@ -1,0 +1,12 @@
+var arrayPairSum = function(nums) {
+    let sortedArr = [...nums].sort((a,b) => a - b);
+    let result = 0;
+    // console.log(sortedArr)
+    for (let i = 0; i < nums.length; i += 2){
+        result += Math.min(sortedArr[i], sortedArr[i + 1])
+        // console.log(result)
+    }
+    return result    
+};
+
+console.log(arrayPairSum([1,4,3,2]))
