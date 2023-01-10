@@ -1,0 +1,31 @@
+var minimumCost = function(cost) {
+    let summ = 0;
+    if (cost.length === 2){
+        summ = cost[0] + cost[1]
+        return summ
+        }
+    if (cost.length < 2){
+        return cost[0]
+        }
+    else {
+
+    let sortedCost = [...cost].sort((a, b) => a - b)
+
+    for (let i = sortedCost.length - 1; i >= 0; i -= 1){
+        // console.log('i', i)
+        // console.log(sortedCost)
+        // console.log('sortedCost[i]', sortedCost[i])
+        // console.log('sortedCost[i -1]', sortedCost[i -1])
+        summ += sortedCost[i]
+        summ += typeof(sortedCost[i -1]) !== 'undefined'? sortedCost[i - 1] : 0; 
+        // console.log(summ)
+        i -= 2
+        sortedCost.pop()
+        sortedCost.pop()
+        sortedCost.pop()
+    }
+}
+    return summ 
+    
+};
+console.log(minimumCost([3,3,3,1]))
