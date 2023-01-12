@@ -1,0 +1,25 @@
+var minimumAbsDifference = function(arr) {
+    let resultArr = [];    
+    let sortArr = [...arr].sort((a, b) => a - b)
+    console.log(sortArr)
+    let mindif = Math.abs(sortArr[1] - sortArr[0])
+    console.log(mindif)
+    for (let i = 0; i < arr.length; i += 1){
+        console.log(mindif, 'mindif')
+        if (Math.abs(sortArr[i + 1] - sortArr[i]) === mindif){
+            let AddArr = [sortArr[i], sortArr[i +1]]
+            resultArr.push(AddArr)
+        }
+        if (Math.abs(sortArr[i + 1] - sortArr[i]) < mindif){
+            let  AddArr = [sortArr[i], sortArr[i +1]]
+            mindif = Math.abs((sortArr[i] - sortArr[i +1]))
+            resultArr = [];
+            resultArr.push(AddArr)
+            // i = 0;
+        }
+    }
+    return resultArr
+    
+};
+
+console.log(minimumAbsDifference([40,11,26,27,-20]))
