@@ -1,0 +1,8 @@
+var truncateSentence = function(s, k) {
+    let arr = s.split(' ')
+    // console.log(arr)
+    let cuttedArr = arr.slice(0, k)
+    // console.log(cuttedArr)
+    return cuttedArr.join(' ')    
+};
+console.log(truncateSentence( "Hello how are you Contestant", 4))
