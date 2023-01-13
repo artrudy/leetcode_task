@@ -1,0 +1,19 @@
+var countConsistentStrings = function(allowed, words) {
+    let result = []
+    let arrAllowed = allowed.split('')
+        // console.log(arrAllowed)
+    let arrWords = words.map(it => it.split(''))
+        // console.log(arrWords)
+    for (let n = 0 ; n < arrWords.length; n += 1){
+        for (let m = 0; m <= arrWords[n].length; m += 1){
+            if(arrAllowed.indexOf(arrWords[n][m]) < 0){
+                break;
+            }
+            if (m === arrWords[n].length -1){
+                result.push(arrWords[n])
+            }
+        }
+    }
+    return result.length    
+};
+console.log(countConsistentStrings( "cad", ["cc","acd","b","ba","bac","bad","ac","d"]))
