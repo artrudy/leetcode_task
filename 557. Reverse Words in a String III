@@ -1,0 +1,9 @@
+var reverseWords = function(s) {
+    let arr = s.split(' ')
+    let splittedTwiceArr = arr.map(it => it.split(''))
+    let reversedArr = splittedTwiceArr.map(it => it.reverse())
+    let joinedArr = reversedArr.map(it => it.join(''))
+    let result = joinedArr.join(' ')
+    return result    
+};
+console.log(reverseWords("Let's take LeetCode contest"))
