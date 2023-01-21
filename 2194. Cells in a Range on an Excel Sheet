@@ -1,0 +1,19 @@
+var cellsInRange = function(s) {
+    let answer = [];
+    let firstLetter = s.charCodeAt(0)
+    // console.log(firstLetter);
+    let secondLetter = s.charCodeAt(3)
+    // console.log(secondLetter)
+    let firstDigit = parseInt(s[1])
+    // console.log(firstDigit)
+    let secondDigit = parseInt(s[4])
+    // console.log(secondDigit)
+
+    for (let i = firstLetter; i <= secondLetter; i += 1){
+        for (let n = firstDigit; n <= secondDigit; n += 1){
+            answer.push(String.fromCharCode(i) + n)
+        }
+    }
+    return answer    
+};
+console.log(cellsInRange("A1:F2"))
