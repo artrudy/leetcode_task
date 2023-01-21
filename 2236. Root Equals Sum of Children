@@ -1,0 +1,4 @@
+var checkTree = function(root) {
+    return (root.right.val + root.left.val) === root.val;
+};
+console.log(checkTree([10,4,6]))
