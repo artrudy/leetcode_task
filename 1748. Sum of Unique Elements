@@ -1,0 +1,11 @@
+var sumOfUnique = function(nums) {
+    let uniqArr = nums.filter(it => nums.indexOf(it) === nums.lastIndexOf(it))
+    if (uniqArr.length > 0){
+        let result = uniqArr.reduce((acc, rec) => acc + rec)
+        return result
+    } else {
+        return 0
+    }
+    return result    
+};
+console.log(sumOfUnique([1,2,3,2]))
