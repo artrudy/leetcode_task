@@ -1,0 +1,8 @@
+var differenceOfSum = function(nums) {
+    let sum = nums.reduce((acc, rec) => acc + rec)
+    let joinedArr = nums.join('')
+    let reSpliteedArr = joinedArr.split('')
+    let splitSumm = reSpliteedArr.reduce((acc, rec) => acc + (+rec), 0)
+    return sum - splitSumm    
+};
+console.log(differenceOfSum([1,15,6,3]))
