@@ -1,0 +1,21 @@
+const selfDividingNumbers = (left, right) => {
+    let oppoRes = [];
+    let res = [];
+    for (let i = left; i <= right; i++) {
+        let numStr = i.toString();
+        for (const j of numStr) {
+            if (i % Number(j) != 0) {
+                oppoRes.push(i);
+            }
+            console.log(oppoRes,'oppoRes')
+        }
+    }
+    for (let i = left; i <= right; i++) {
+        if (!oppoRes.includes(i)) {
+            res.push(i);
+        }
+        console.log(res)
+    }
+    return res;
+};
+console.log(selfDividingNumbers(1771,8312))
