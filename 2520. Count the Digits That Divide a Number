@@ -1,0 +1,12 @@
+var countDigits = function(num) {
+    let str = `${num}`
+    let arr = str.split('')
+    let counter = 0;
+    for (let i = 0; i < arr.length; i += 1){
+        if(num % (+arr[i]) === 0){
+            counter += 1
+        }
+    }
+    return counter    
+};
+console.log(countDigits(1248))
