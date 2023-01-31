@@ -1,0 +1,18 @@
+var rearrangeArray = function(nums) {
+    let positiv = [];
+    let negativ = [];
+    for (let i = 0; i < nums.length; i += 1){
+        if (nums[i] > 0){
+            positiv.push(nums[i])
+        } else {
+            negativ.push(nums[i])
+        }
+    }    
+    let result = []
+    for (let j = 0; j < positiv.length; j += 1){
+        result.push(positiv[j])
+        result.push(negativ[j])
+    }
+    return result
+};
+console.log(rearrangeArray([3,1,-2,-5,2,-4]))
