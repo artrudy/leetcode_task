@@ -1,0 +1,8 @@
+function getSumOfDigits(integer) {
+    let sum = 0;
+    let arr = `${integer}`.split('')
+    // console.log(arr)
+    let summ = arr.reduce((acc, rec) => acc + (+rec), 0)
+    return summ   
+  }
+  console.log(getSumOfDigits(123))
