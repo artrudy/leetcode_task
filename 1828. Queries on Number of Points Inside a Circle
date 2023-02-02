@@ -1,0 +1,25 @@
+var countPoints = function(points, queries) {
+    let arr = [];
+    let counter = 0;
+    for (let i = 0; i < queries.length; i += 1){
+        for (let j = 0; j < points.length; j += 1){
+            // console.log(Math.sqrt((queries[i][1] - points[j][1]) ** 2 + (queries[i][2] - points[j][2]) ** 2))
+            // console.log((queries[i][0] - points[j][0]))
+            // console.log((queries[i][1] - points[j][1]))
+            // console.log((queries[i][1] - points[j][1]) + (queries[i][2] - points[j][2]) ** 2)
+
+            
+            if ((queries[i][2] ** 2)  >= ((queries[i][0] - points[j][0]) ** 2) + ((queries[i][1] - points[j][1]) ** 2)) {
+                counter += 1;
+            }
+            // console.log(counter) 
+            if (j === points.length - 1){
+                arr.push(counter)
+                counter = 0;
+            }
+
+        }    
+    }
+    return arr
+};
+console.log(countPoints([[1,1],[2,2],[3,3],[4,4],[5,5]], [[1,2,2],[2,2,2],[4,3,2],[4,3,3]]))
