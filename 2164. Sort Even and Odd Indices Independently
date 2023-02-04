@@ -1,0 +1,28 @@
+var sortEvenOdd = function(nums) {
+    let evenArr = [];
+    let oddArr = [];
+    let result = [];
+    for (let j = 0; j < nums.length; j += 1){
+        if (j % 2 === 0){
+            evenArr.push(nums[j])
+        } else {
+            oddArr.push(nums[j])
+        }
+    }
+    evenArr.sort((a, b) => a - b)
+    oddArr.sort((a, b) => b - a)
+
+    for (let i = 0; i < nums.length; i += 1){
+        if (i % 2 === 0){
+            result.push(evenArr[0]);
+            evenArr.shift()
+
+        } else{
+            result.push(oddArr[0]);
+            oddArr.shift()
+        }
+    }
+    return result
+    
+};
+console.log(sortEvenOdd([2, 1]))
