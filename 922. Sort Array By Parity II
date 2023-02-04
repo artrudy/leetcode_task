@@ -1,0 +1,25 @@
+var sortArrayByParityII = function(nums) {
+    let oddArr = [];
+    let evenArr = [];
+    let result = [];
+    for (let i = 0; i < nums.length; i +=  1){
+        if (nums[i] % 2 === 0){
+            evenArr.push(nums[i])
+        } else{
+            oddArr.push(nums[i])
+        }
+    }
+    // console.log(oddArr, 'oddArr')
+    // console.log(evenArr, 'evenArr')
+    for (let j = 0; j < nums.length; j += 1){
+        if (j % 2 === 0){
+            result.push(evenArr[0]);
+            evenArr.shift()
+        } else{
+            result.push(oddArr[0]);
+            oddArr.shift();
+        }
+    }
+    return result    
+};
+console.log(sortArrayByParityII([4,2,5,7]))
