@@ -1,0 +1,90 @@
+var largestInteger = function(num) {
+    
+    let arr = `${num}`.split('').map(it => +it)
+    if (arr.length <= 2){
+        return num
+    }
+
+    let result = [];
+    let oddArr = [];
+    let evenArr = [];
+    let arrSorted = [...arr].sort((a, b) => b - a)
+    // console.log(arrSorted, 'arrSorted')
+
+    for (let i = 0; i < arr.length; i += 1){
+        if (arrSorted[i] % 2 !== 0){
+            oddArr.push(arrSorted[i])
+        } else {
+            evenArr.push(arrSorted[i])
+        }
+    }
+    // console.log(oddArr, 'odd')
+    // console.log(evenArr, 'even')
+
+    for (let j = 0; j < 2; j += 1){
+        if (result.length < 2){
+            if(arr[j] === arrSorted[j]){
+                // console.log('&&&&&&&&&&&&&&&&&&&&&&&&&&&')
+                result.push(arr[j]);
+                if(oddArr[0] === arr[j]){
+                    oddArr.shift()
+                }
+                if(evenArr[0] === arr[j]){
+                    evenArr.shift()
+                }
+
+                arr.shift();
+                arrSorted.shift();
+                j = j - 1;
+                console.log(result, 'result');
+                
+               
+            }
+            if (arrSorted[j] > arr[j]){
+                if(oddArr.indexOf(arr[j])>= 0 && oddArr.length > 1){
+                    // console.log("_____________________________")
+                    result.push(oddArr[0])
+                    arr.splice(arr.indexOf(oddArr[0]), 1, arr[j])
+                    // console.log(arr, 'arr__________________________')
+                    oddArr.shift();
+                    arr.shift();
+                    arrSorted.shift()
+                    j = j - 1;
+                    // console.log(result, 'result', '++++')
+                }
+                if (oddArr.indexOf(arr[j])>= 0 && oddArr.length <= 1){
+                    result.push(oddArr[0]);
+                    oddArr.shift();
+                    arr.shift();
+                    j = j - 1;
+                }
+                
+                
+                if(evenArr.indexOf(arr[j])>= 0 && evenArr.length > 1){
+                    result.push(evenArr[0]);
+                    arr.splice(arr.indexOf(evenArr[0]), 1, arr[j]);
+                    evenArr.shift();
+                    arr.shift();
+                    j = j - 1;
+
+                }
+                if (evenArr.indexOf(arr[j])>= 0 && evenArr.length <= 1){
+                    result.push(evenArr[0]);
+                    evenArr.shift();
+                    arr.shift();
+                    j = j - 1;
+                }
+
+            }
+        }
+        
+        console.log(result, 'result', j, 'j')
+        console.log(arr, 'arr')
+        console.log(arrSorted, 'arrSorted')
+    }
+
+   
+   return result.concat(arr).join('')
+    
+};
+console.log(largestInteger(2399))
