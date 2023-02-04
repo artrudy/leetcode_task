@@ -1,0 +1,15 @@
+var sortArrayByParity = function(nums) {
+    let oddArr = [];
+    let evenArr = [];
+    for (let i =0; i < nums.length; i += 1){
+        if (nums[i] % 2 === 0){
+            evenArr.push(nums[i])
+        } else {
+            oddArr.push(nums[i])
+        }
+    }
+    let result = evenArr.concat(oddArr)
+    return result
+    
+};
+console.log(sortArrayByParity([3,1,2,4]))
