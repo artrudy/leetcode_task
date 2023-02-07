@@ -1,0 +1,57 @@
+my_ answer
+
+var threeSum = function(nums) {
+    let arr = [];
+    let counter = [];
+    for (let i = 0; i < nums.length; i += 1){
+        for (let j = 1; j < nums.length; j += 1){
+            for (let z = 2; z < nums.length; z += 1){
+                if ((nums[i] + nums[j] + nums[z]) === 0 && i !== j && i!== z && j !== z){
+                    // console.log('bingo')
+                    // console.log(nums[i], nums[j], nums[z])
+                    if ((counter.indexOf(i) < 0 && counter.indexOf(j) < 0) || (counter.indexOf(z) < 0 && counter.indexOf(i) < 0) || (counter.indexOf(j) < 0 && counter.indexOf(z) < 0)){
+                        arr.push([nums[i], nums[j], nums[z]]);
+                        counter.push(i, j, z)
+
+                    }
+                    // arr.push([nums[i], nums[j], nums[z]])
+                    // counter.push(i, j, z)
+                   
+                    // console.log(nums)
+                }
+            }
+        }
+    }
+    return arr    
+};
+console.log(threeSum([-1,0,1,2,-1,-4]))
+
+
+
+acceptable Answer 
+
+var threeSum = function(nums) {
+    let arr = [];
+    let counter = [];
+    for (let i = 0; i < nums.length; i += 1){
+        for (let j = 1; j < nums.length; j += 1){
+            for (let z = 2; z < nums.length; z += 1){
+                if ((nums[i] + nums[j] + nums[z]) === 0 && i !== j && i!== z && j !== z){
+                    // console.log('bingo')
+                    // console.log(nums[i], nums[j], nums[z])
+                    if ((counter.indexOf(i) < 0 && counter.indexOf(j) < 0) || (counter.indexOf(z) < 0 && counter.indexOf(i) < 0) || (counter.indexOf(j) < 0 && counter.indexOf(z) < 0)){
+                        arr.push([nums[i], nums[j], nums[z]]);
+                        counter.push(i, j, z)
+
+                    }
+                    // arr.push([nums[i], nums[j], nums[z]])
+                    // counter.push(i, j, z)
+                   
+                    // console.log(nums)
+                }
+            }
+        }
+    }
+    return arr    
+};
+console.log(threeSum([-1,0,1,2,-1,-4]))
