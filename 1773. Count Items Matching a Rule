@@ -1,0 +1,26 @@
+
+var countMatches = function(items, ruleKey, ruleValue) {
+    let result = [];
+
+    for (let i = 0; i < items.length; i += 1){
+
+        if (ruleKey === 'type'){
+            if(items[i][0] == ruleValue){
+                result.push(items[i])
+            }
+        }
+        if (ruleKey === 'color'){
+            if(items[i][1] == ruleValue){
+                result.push(items[i])
+            }
+        }
+        if (ruleKey === 'name'){
+            if(items[i][2] == ruleValue){
+                result.push(items[i])
+            }
+        }
+    }
+    return result
+    
+};
+console.log(countMatches([["phone","blue","pixel"],["computer","silver","lenovo"],["phone","gold","iphone"]], "color", "silver"))
