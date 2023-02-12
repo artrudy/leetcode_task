@@ -1,0 +1,25 @@
+
+var balancedStringSplit = function(s) {
+    let counter = 0;
+    // const arr = s.split('')
+    // console.log(arr)
+    let Rcounter = 0;
+    let Lcounter = 0;
+    
+    for (let i = 0; i < s.length; i += 1){
+        if (arr[i] === 'R'){
+            Rcounter += 1;
+        }
+        if (arr[i] === 'L'){
+            Lcounter += 1;
+        }
+        if (Lcounter === Rcounter){
+            counter += 1
+        }
+    
+
+    }
+    return counter
+    
+};
+console.log(balancedStringSplit("RLRRRLLRLL"))
