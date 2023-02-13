@@ -1,0 +1,12 @@
+var targetIndices = function(nums, target) {
+    let sortArr = nums.sort((a, b) => a - b)
+    // console.log(sortArr)
+    let result = [];
+    for (let i = 0; i < sortArr.length; i += 1){
+        if(sortArr[i] === target){
+            result.push(i)
+        }
+    }
+    return result    
+};
+console.log(targetIndices([1,2,5,2,3], 2))
