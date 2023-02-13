@@ -1,0 +1,32 @@
+var arrayRankTransform = function(arr) {
+    let cloneArr = [...arr];
+    cloneArr.sort((a,b) => a - b);
+    let hash = {};
+    let rank = 1;
+    
+    for (let i = 0; i < arr.length; i += 1){
+        if (!hash[cloneArr[i]]){
+            hash[cloneArr[i]] = rank ++;
+        }
+    } 
+        
+    return arr.map(it => hash[it])
+};
+console.log(arrayRankTransform([37,12,28,9,100,56,80,5,12]))
+
+
+console.log('Output: [5,3,4,2,8,6,7,1,3]')
+
+
+// var arrayRankTransform = function(arr) {
+//     let clone = [...arr];
+//     let hash = {};
+//     let rank = 1;
+//     clone.sort((a,b) => a - b).map(( a, b) => {
+            // if (!hash[a]) {
+//             hash[a] = rank++;
+//         };
+//     });
+//     return arr.map((a)=>hash[a]);
+// };
+console.log(arrayRankTransform([37,12,28,9,100,56,80,5,12]))
