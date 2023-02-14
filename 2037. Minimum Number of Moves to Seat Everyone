@@ -1,0 +1,12 @@
+var minMovesToSeat = function(seats, students) {
+    let sortStud = [...students].sort((a,b ) => a - b)
+    let sortSeats = [...seats].sort((a, b) => a - b)
+    let counter = 0;
+    for (let i = 0; i < students.length; i += 1){
+        if (sortSeats[i] !== sortStud[i]){
+            counter += Math.abs(sortSeats[i] - sortStud[i])
+        }
+    }
+    return counter    
+};
+console.log(minMovesToSeat([3,1,5], [2,7,4]))   
