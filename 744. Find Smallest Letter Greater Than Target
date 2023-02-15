@@ -1,0 +1,25 @@
+var nextGreatestLetter = function(letters, target) {
+    let setFromLetters = new Set(letters)
+    let arr = Array.from(setFromLetters)
+    let result;
+    if (arr.indexOf(target) < 0){
+        arr.push(target)
+        let sortedArr = arr.sort();
+        if (sortedArr.indexOf(target) === sortedArr.length - 1){
+            result = letters[0];
+            return result
+        } else {
+            result = sortedArr[sortedArr.indexOf(target) + 1]
+            return result
+        }        
+    }
+    let sortedArr = arr.sort();    
+    if (sortedArr.indexOf(target) >= 0 && sortedArr.indexOf(target) < sortedArr.length - 1){
+        result = sortedArr[sortedArr.indexOf(target) + 1]
+    }
+    if (sortedArr.indexOf(target) >= 0 && sortedArr.indexOf(target) === sortedArr.length - 1){
+        result = letters[0]
+    }
+    return result    
+};
+console.log(nextGreatestLetter(["e","e","g","g"], "g"))
