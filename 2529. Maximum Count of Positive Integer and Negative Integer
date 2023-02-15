@@ -1,0 +1,13 @@
+var maximumCount = function(nums) {
+    let positiveArr = [];
+    let negativeArr = [];
+    for (let i = 0; i < nums.length; i += 1){
+        if (nums[i] < 0){
+            negativeArr.push(nums[i])
+        } if (nums[i] > 0){
+            positiveArr.push(nums[i])
+        }
+    }
+    return Math.max(positiveArr.length, negativeArr.length)
+};
+console.log(maximumCount([-2,-1,-1,1,2,3]))
