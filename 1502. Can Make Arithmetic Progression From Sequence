@@ -1,0 +1,13 @@
+var canMakeArithmeticProgression = function(arr) {
+    let copyArr = [...arr];
+    let sortedArr = copyArr.sort((a, b) => a - b)
+    const step = sortedArr[1] - sortedArr[0]
+    let counter = 0;
+    for (let i = 0;  i < arr.length - 1; i = i + 1){
+        if(sortedArr[i + 1] - sortedArr[i] !== step){
+            counter = counter + 1
+        } 
+    }
+    return counter === 0    
+};
+console.log(canMakeArithmeticProgression([3,5,2]))
