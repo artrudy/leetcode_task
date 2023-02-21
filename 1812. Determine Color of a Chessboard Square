@@ -1,0 +1,13 @@
+var squareIsWhite = function(coordinates) {
+    let x;
+    let y = coordinates[0];
+    if (y === 'a'|| y === 'c'|| y === 'e'|| y=== 'g'){
+        x = +1;
+    } 
+    if (y === 'b'|| y === 'd'|| y === 'f'|| y === 'h'){
+        x = 2
+
+    }
+    return (x + Number(coordinates[1])) % 2 !== 0    
+};
+console.log(squareIsWhite('h3'))
