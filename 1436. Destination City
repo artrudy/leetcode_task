@@ -1,0 +1,19 @@
+function destCity(paths) {
+  const destinations = new Set(); // создаем множество для хранения конечных пунктов
+  const origins = new Set(); // создаем множество для хранения начальных пунктов
+  for (let path of paths) {
+    origins.add(path[0]); // добавляем начальный пункт текущего пути в множество начальных пунктов
+    destinations.add(path[1]); // добавляем конечный пункт текущего пути в множество конечных пунктов
+  }
+  console.log(destinations)
+  console.log(origins)
+
+  // Находим разность между множеством конечных пунктов и множеством начальных пунктов,
+  // чтобы получить конечный пункт без исходящих путей
+  const result = [...destinations].filter(city => !origins.has(city));
+  console.log(result)
+  return result[0]; // возвращаем найденный конечный пункт
+}
+console.log(destCity([[["qMTSlfgZlC","ePvzZaqLXj"],["xKhZXfuBeC","TtnllZpKKg"],["ePvzZaqLXj","sxrvXFcqgG"],["sxrvXFcqgG","xKhZXfuBeC"],["TtnllZpKKg","OAxMijOZgW"]]]))
+
+console.log('Output "xKhZXfuBeC", Expected "OAxMijOZgW"')
