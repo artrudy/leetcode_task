@@ -1,0 +1,11 @@
+var arrayChange = function(nums, operations) {
+    for (let i = 0; i < operations.length; i += 1){
+        let numberToReplace = operations[i][0];
+        let replacer= operations[i][1];
+        let position = nums.indexOf(numberToReplace);
+        nums.splice(position, 1, replacer);
+    }
+    return nums    
+};
+console.log(arrayChange([1,2,4,6], [[1,3],[4,7],[6,1]]))
+console.log('Output: [3,2,7,1]')
