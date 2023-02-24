@@ -1,0 +1,20 @@
+function findDisappearedNumbers(nums) {
+  const result = [];
+  
+  // Идем по массиву и отмечаем вспомогательном массиве
+  // все числа, которые встречаются в nums
+  const map = new Array(nums.length).fill(false);
+  for (let i = 0; i < nums.length; i++) {
+    map[nums[i] - 1] = true;
+  }
+  
+  // Идем по вспомогательному массиву и добавляем в результат
+  // все числа, которые не были отмечены
+  for (let i = 0; i < map.length; i++) {
+    if (!map[i]) {
+      result.push(i + 1);
+    }
+  }
+  
+  return result;
+}
