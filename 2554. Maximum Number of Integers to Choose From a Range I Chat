@@ -1,0 +1,25 @@
+function maxNonBanned(n, maxSum, banned) {
+  // Create a Set to store the banned numbers for fast lookup
+  const bannedSet = new Set(banned);
+
+  let maxCount = 0;
+  let currSum = 0;
+
+  for (let i = 1; i <= n; i++) {
+    // If the number is banned, skip it
+    if (bannedSet.has(i)) {
+      continue;
+    }
+
+    // If adding the current number would exceed maxSum, stop
+    if (currSum + i > maxSum) {
+      break;
+    }
+
+    // Otherwise, add the current number to the sum and count
+    currSum += i;
+    maxCount++;
+  }
+
+  return maxCount;
+}
