@@ -1,0 +1,12 @@
+var maxCount = function(banned, n, maxSum) {
+    let counter = 0;
+    let summ = 0;
+    for (let i = 1; i <= n; i++){
+        if((banned.indexOf(i) < 0) && summ + i <= maxSum){
+            summ = summ + i;
+            counter = counter + 1;
+            console.log(i)
+        }
+    }
+    return counter    
+};
