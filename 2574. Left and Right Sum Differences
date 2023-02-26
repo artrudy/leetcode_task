@@ -1,0 +1,20 @@
+var leftRigthDifference = function(nums) {
+    let leftArrSumm = [0];
+    let rifgthArrSumm = [0];
+    for (let i = 1; i < nums.length; i+= 1){
+        let number = leftArrSumm[i - 1] + nums[i-1];
+        leftArrSumm.push(number);
+    }
+
+    for (let j = nums.length; j > 1 ; j -= 1){
+        let anotherNumber = rifgthArrSumm[0] + nums[j - 1];
+        rifgthArrSumm.unshift(anotherNumber);
+    }
+
+    let resultArr = [];
+    for (let i = 0; i < nums.length; i += 1){
+        resultArr.push(Math.abs(leftArrSumm[i] - rifgthArrSumm[i]));
+    }
+    return resultArr
+};
+console.log(leftRigthDifference([1]))
