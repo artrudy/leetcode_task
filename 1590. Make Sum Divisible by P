@@ -1,0 +1,21 @@
+function minSubarray(nums, p) {
+  const n = nums.length;
+  let sum = 0;
+  for (let i = 0; i < n; i++) {
+    sum = (sum + nums[i]) % p; // calculate the prefix sum modulo p
+  }
+  if (sum === 0) return 0; // the whole array is divisible by p
+  const modMap = new Map();
+  modMap.set(0, -1); // the prefix sum 0 has index -1
+  let curSum = 0;
+  let ans = n;
+  for (let i = 0; i < n; i++) {
+    curSum = (curSum + nums[i]) % p;
+    const mod = (curSum - sum + p) % p;
+    if (modMap.has(mod)) {
+      ans = Math.min(ans, i - modMap.get(mod));
+    }
+    modMap.set(curSum % p, i);
+  }
+  return ans === n ? -1 : ans; // no subarray found
+}
