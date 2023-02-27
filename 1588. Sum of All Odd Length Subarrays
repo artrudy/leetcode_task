@@ -1,0 +1,11 @@
+function sumOddLengthSubarrays(arr) {
+  let sum = 0;
+  for (let i = 1; i <= arr.length; i += 2) { // loop through odd lengths
+    for (let j = 0; j <= arr.length - i; j++) { // loop through subarrays of length i
+      for (let k = j; k < j + i; k++) { // loop through elements of subarray
+        sum += arr[k];
+      }
+    }
+  }
+  return sum;
+}
