@@ -1,0 +1,30 @@
+var numDifferentIntegers = function(word) {
+    // word = word.replace(/\D+/g, ' ');
+    let arr = [];
+    let number = []
+    for(let char of word){       
+        if (isNaN(+char)){
+            arr.push(number);
+            number = []
+        } else{
+            number.push(+char)
+        }
+    }
+    arr.push(number)
+    // console.log(arr)
+    for (let i = 0; i < arr.length; i += 1){
+        if (arr[i][0] === 0 && arr[i].length > 1){
+            arr[i].shift();
+            i = i - 1
+        }
+    }
+
+    let stringArr = arr.map(it => it.join(''));
+    // console.log(stringArr)
+    let filteredStringArr = stringArr.filter(it => it !== '');
+    // console.log(filteredStringArr)
+    // let numberArr = filteredStringArr.map(it => +it)
+    // console.log(numberArr)
+    const set = new Set(filteredStringArr)
+    return set.size
+};
