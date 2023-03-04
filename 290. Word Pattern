@@ -1,0 +1,27 @@
+var wordPattern = function(pattern, s) {
+    let result = true;
+    const arr = s.split(' ');
+    const patternNewArr = pattern.split('')
+    const sArr = Array.from(new Set(s.split(' ')))
+    const patternArr = Array.from(new Set(pattern.split('')))
+    // console.log(patternArr)
+    // console.log(sArr)
+    if (arr.length !== patternNewArr.length){
+        result = false;
+        return result;
+    } else {
+        let map = new Map;
+    for (let i = 0; i < patternArr.length; i += 1){
+        map.set(patternArr[i], sArr[i])
+    }
+    for (let j = 0; j < pattern.length; j += 1){
+        
+        if (map.get(pattern[j]) !== arr[j]){
+            result = false;
+        }
+    }
+    }
+    
+    return result
+};
+console.log(wordPattern("aaa", s = "aa aa aa aa"))
