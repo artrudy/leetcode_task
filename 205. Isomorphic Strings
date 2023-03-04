@@ -1,0 +1,27 @@
+var isIsomorphic = function(s, t) {
+    let result = true;
+    const sArr = s.split('');
+    const tArr = t.split('')
+    const sCleanArr = Array.from(new Set(s.split('')))
+    const tCleanArr = Array.from(new Set(t.split('')))
+    // console.log(sArr, tArr)
+    // console.log(sCleanArr, tCleanArr)
+    if (sArr.length !== tArr.length){
+        result = false;
+        return result;
+    } else {
+        let map = new Map;
+    for (let i = 0; i < tArr.length; i += 1){
+        map.set(tCleanArr[i], sCleanArr[i])
+    }
+    for (let j = 0; j < tArr.length; j += 1){
+        
+        if (map.get(tArr[j]) !== sArr[j]){
+            result = false;
+        }
+    }
+    }
+    
+    return result
+};
+console.log(isIsomorphic("foo", "bar"))
