@@ -1,0 +1,20 @@
+var romanToInt = function(s) {
+   const vocab = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000};
+   const arr = s.split('')
+//    console.log(arr)
+   let summArr = []
+   let convetedArr = arr.map(it => vocab[it])
+//    console.log(convetedArr)
+   for (let i = 0; i < convetedArr.length; i += 1){
+    if (convetedArr[i] < convetedArr[i + 1]){
+        summArr.push(convetedArr[i + 1] - convetedArr[i]);
+        i = i + 1;
+    } else {
+        summArr.push(convetedArr[i])
+    }
+   }
+//    console.log(summArr)
+   let result = summArr.reduce((acc, rec) => acc + rec);
+   return result    
+};
+console.log(romanToInt( "MCMXCIV"))
