@@ -1,0 +1,19 @@
+var lengthOfLongestSubstring = function(s) {
+  let maxLength = 0;
+  let start = 0;
+  let charMap = {};
+
+  for (let i = 0; i < s.length; i++) {
+    const currentChar = s[i];
+
+    if (charMap[currentChar] >= start) {
+      start = charMap[currentChar] + 1;
+    }
+
+    charMap[currentChar] = i;
+    const currentLength = i - start + 1;
+    maxLength = Math.max(maxLength, currentLength);
+  }
+
+  return maxLength;
+}
