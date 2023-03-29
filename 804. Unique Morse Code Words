@@ -1,0 +1,16 @@
+    const morseCodeTable = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."];
+
+    const uniqueMorseRepresentations = (words) => {
+      const transformations = new Set();
+      for (let i = 0; i < words.length; i++) {
+        let morseCode = '';
+        for (let j = 0; j < words[i].length; j++) {
+          const index = words[i].charCodeAt(j) - 'a'.charCodeAt(0);
+          morseCode += morseCodeTable[index];
+        }
+        transformations.add(morseCode);
+      }
+      return transformations.size;
+    };
+    
+console.log(uniqueMorseRepresentations(["gin","zen","gig","msg"]))
