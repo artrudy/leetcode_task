@@ -1,0 +1,13 @@
+var minPairSum = function(nums) {
+  let arr = [...nums].sort((a, b) => a - b);
+  let max = 0;
+  let summ = 0;
+  for (let i = 0; i < nums.length / 2; i += 1){
+      summ = arr[i] + arr[nums.length - i - 1]
+      if (summ >= max){
+        max = summ
+      }
+  }
+  return max    
+};
+console.log(minPairSum([3,5,2,3]))
