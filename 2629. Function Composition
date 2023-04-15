@@ -1,0 +1,24 @@
+
+var compose = function(functions) {
+    // Проверяем, что массив функций не пустой
+    if (functions.length === 0) {
+      // Если массив пустой, возвращаем идентичную функцию
+      return function(x) { return x; };
+    } else if (functions.length === 1) {
+      // Если массив содержит только одну функцию, возвращаем ее
+      return functions[0];
+    } else {
+      // Иначе создаем композицию функций
+      return functions.reduce(function(f, g) {
+        return function(x) {
+          return f(g(x));
+        };
+      });
+    }
+  }
+  
+
+/**
+ * const fn = compose([x => x + 1, x => 2 * x])
+ * fn(4) // 9
+ */
