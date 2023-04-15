@@ -1,0 +1,16 @@
+Array.prototype.last = function() {
+  let result = this[this.length -1]
+  if (typeof(result) === 'undefined') {
+    result = -1;
+    return result;
+  } else {
+    return result
+  }    
+};
+
+/**
+ * const arr = [1, 2, 3];
+ * arr.last(); // 3
+ */
+const arr = [0,0,0]
+console.log(arr.last())
