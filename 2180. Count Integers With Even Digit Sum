@@ -1,0 +1,18 @@
+var countEven = function(num) {
+  let counter = 0;
+  // let arr = [];
+  let summ = 0;
+for (let i = 1; i <= num; i += 1){
+    arr = i.toString().split("");
+    for (let j = 0; j < arr.length; j += 1){
+      summ += Number(arr[j])
+    }
+    if (summ % 2  === 0){
+      counter += 1;
+    }
+    // console.log(arr, typeof(arr), summ);
+    summ = 0;  
+}
+return counter
+};
+console.log(countEven(4 ))
