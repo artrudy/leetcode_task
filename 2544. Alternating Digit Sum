@@ -1,0 +1,25 @@
+var alternateDigitSum = function(n) {
+  let arr = `${n}`.split('').map(it => Number(it))
+  let sorted_arr = [...arr]. sort((a,b) => b - a)
+  let position = arr.indexOf(sorted_arr[0]);
+  let resArr = [];
+  for (let i = 0; i < arr.length; i += 1){
+    if (position % 2 !== 0){
+      if( i % 2 !== 0){
+        resArr.push(arr[i]);
+      } else { 
+        resArr.push(arr[i] * (-1));
+      }
+    } 
+    if (position % 2 === 0){
+      if( i % 2 === 0){
+        resArr.push(arr[i]);
+      } else { 
+        resArr.push(arr[i] * (-1));
+      }
+    }
+  }
+  const result = resArr.reduce((acc, rec) => acc + rec)
+  return result;    
+};
+console.log(alternateDigitSum(25))
