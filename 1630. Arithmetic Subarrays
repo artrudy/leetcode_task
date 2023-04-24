@@ -1,0 +1,25 @@
+var checkArithmeticSubarrays = function(nums, l, r) {
+  let result = [];
+
+  for (let i = 0; i < l.length; i += 1){
+    let subArray = nums.slice(l[i], r[i] + 1)
+    // console.log(subArray, 'subArr before sorting')
+    subArray.sort((a, b ) => a - b);
+    // console.log(subArray, 'subArr after sorting')
+
+
+    let difference = subArray[1] - subArray[0];
+    let isAriphmetic = true;
+
+    for (let j = 1; j < subArray.length; j += 1){
+      if (subArray[j] - subArray[j - 1] !== difference){
+        isAriphmetic = false;
+        break
+      } 
+    }
+    result.push(isAriphmetic)
+  }
+    return result
+};
+
+console.log(checkArithmeticSubarrays([4,6,5,9,3,7], [0,0,2], [2,3,5]))
