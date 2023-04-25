@@ -1,0 +1,20 @@
+var flipAndInvertImage = function(image) {
+  let reversedImage = image.map(it => it.reverse())
+  let resultArr = [];
+  let currentArr = [];
+  for (let i = 0; i < image.length; i += 1){
+    for (j = 0; j < image[i].length; j += 1){
+      if (reversedImage[i][j] === 1){
+        currentArr.push(0)
+      } else {
+        currentArr.push(1)
+      }
+      if (j === image[i].length - 1){
+        resultArr.push(currentArr);
+        currentArr = [];
+      }
+    }
+  }
+  return resultArr    
+};
+console.log(flipAndInvertImage([[1,1,0],[1,0,1],[0,0,0]]))
