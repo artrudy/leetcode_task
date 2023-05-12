@@ -1,0 +1,13 @@
+function once(fn) {
+  let result;
+  let hasBeenCalled = false;
+
+  return function(...args) {
+    if (!hasBeenCalled) {
+      result = fn.apply(this, args);
+      hasBeenCalled = true;
+      return result;
+    }
+    return undefined;
+  }
+}
