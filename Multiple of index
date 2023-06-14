@@ -1,0 +1,13 @@
+function multipleOfIndex(array) {
+  let arr = [];
+  if (array[0] === 0 ){
+    arr.push(0)
+  };
+  for (let i = 1; i < array.length; i += 1){
+    if (array[i] % i === 0){
+      arr.push(array[i]);
+    }
+  }
+  return arr
+}
+console.log(multipleOfIndex([0, -56,-85,72,-26,-14,76,-27,72,35,-21,-67,87,0,21,59,27,-92,68]));
