@@ -1,0 +1,13 @@
+
+var sortBy = function(arr, fn) {
+  // Create a new array of objects with original values and corresponding fn outputs
+  const mappedArr = arr.map((value) => ({ value, sortValue: fn(value) }));
+
+  // Sort the mapped array based on the sortValue property
+  mappedArr.sort((a, b) => a.sortValue - b.sortValue);
+
+  // Extract the sorted values from the mapped array
+  const sortedArr = mappedArr.map((item) => item.value);
+
+  return sortedArr;
+}
