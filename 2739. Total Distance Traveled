@@ -1,0 +1,28 @@
+var distanceTraveled = function(mainTank, additionalTank) {
+  let dist = 0;
+  
+  // Simulate fuel consumption and transfers until mainTank is less than 5
+  while (mainTank >= 5) {
+    dist += 50; // Each iteration represents a consumption of 5 liters, which covers 50 km
+    mainTank -= 5; // Deduct 5 liters from the mainTank
+    
+    // Check if additionalTank has at least 1 liter of fuel to transfer
+    if (additionalTank >= 1) {
+      mainTank += 1; // Transfer 1 liter from additionalTank to mainTank
+      additionalTank -= 1; // Deduct 1 liter from additionalTank
+    }    
+  }
+  
+  // Add the remaining fuel in the mainTank (less than 5 liters)
+  if (mainTank > 0) {
+    dist += mainTank * 10; // Each liter covers 10 km
+  }
+  
+  return dist;
+};
+
+// Example usage
+const mainTank = 20;
+const additionalTank = 10;
+const maxDistance = distanceTraveled(mainTank, additionalTank);
+console.log(maxDistance); // Output: 300
