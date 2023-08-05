@@ -1,0 +1,10 @@
+var arrangeCoins = function(n) {
+    let stair = 0;
+    let rest = n;
+    while (rest > stair){
+        stair += 1;
+        rest = rest - stair;
+    }
+    return stair    
+};
+console.log(arrangeCoins(5))
