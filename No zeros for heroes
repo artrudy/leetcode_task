@@ -1,0 +1,15 @@
+function noBoringZeros(n) {
+  if (n === 0) {
+    return n;
+  }
+
+  while (n % 10 === 0)  {
+   n = n / 10;
+  }
+  return n;
+  }
+
+
+function noBoringZeros(n) {
+  return n === 0 ? 0 : parseInt(n.toString().replace(/0+$/, ""), 10);
+}
