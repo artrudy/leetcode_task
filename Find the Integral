@@ -1,0 +1,6 @@
+function integrate(coefficient, exponent) {
+  let newExp = exponent + 1;
+  let newCoef = coefficient / newExp;
+  return `${newCoef}x^${newExp}`;
+}
+console.log(integrate(3, 2));
